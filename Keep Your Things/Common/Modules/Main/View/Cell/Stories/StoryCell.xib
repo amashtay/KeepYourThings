@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="17701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17703"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="StoryCell" id="B1m-ZO-QdD" customClass="StoryCell" customModule="Keep_Your_Things" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="91" height="150"/>
+            <autoresizingMask key="autoresizingMask"/>
+            <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
+                <rect key="frame" x="0.0" y="0.0" width="91" height="150"/>
+                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                <subviews>
+                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="tqL-oT-52R">
+                        <rect key="frame" x="0.0" y="0.0" width="91" height="150"/>
+                        <color key="tintColor" systemColor="systemBlueColor"/>
+                    </imageView>
+                    <visualEffectView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="NPX-hh-CwW">
+                        <rect key="frame" x="0.0" y="0.0" width="91" height="150"/>
+                        <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="HAc-ob-tLg">
+                            <rect key="frame" x="0.0" y="0.0" width="91" height="150"/>
+                            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                            <subviews>
+                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Заголовок истории" lineBreakMode="tailTruncation" numberOfLines="0" minimumScaleFactor="0.64999997615814209" translatesAutoresizingMaskIntoConstraints="NO" id="BLu-Kc-PoF">
+                                    <rect key="frame" x="8" y="104.5" width="75" height="33.5"/>
+                                    <fontDescription key="fontDescription" name=".AppleSystemUIFont" family=".AppleSystemUIFont" pointSize="14"/>
+                                    <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                    <nil key="highlightedColor"/>
+                                    <size key="shadowOffset" width="0.0" height="0.0"/>
+                                </label>
+                            </subviews>
+                            <constraints>
+                                <constraint firstAttribute="bottom" secondItem="BLu-Kc-PoF" secondAttribute="bottom" constant="12" id="1kT-wC-GeT"/>
+                                <constraint firstItem="BLu-Kc-PoF" firstAttribute="top" relation="greaterThanOrEqual" secondItem="HAc-ob-tLg" secondAttribute="top" constant="12" id="ZOR-l1-W9l"/>
+                                <constraint firstAttribute="trailing" secondItem="BLu-Kc-PoF" secondAttribute="trailing" constant="8" id="clK-HT-WY6"/>
+                                <constraint firstItem="BLu-Kc-PoF" firstAttribute="leading" secondItem="HAc-ob-tLg" secondAttribute="leading" constant="8" id="yyM-hx-Uo1"/>
+                            </constraints>
+                        </view>
+                        <blurEffect style="dark"/>
+                    </visualEffectView>
+                </subviews>
+            </view>
+            <color key="backgroundColor" systemColor="secondarySystemFillColor"/>
+            <constraints>
+                <constraint firstAttribute="bottom" secondItem="tqL-oT-52R" secondAttribute="bottom" id="Cck-Kc-PO2"/>
+                <constraint firstItem="tqL-oT-52R" firstAttribute="top" secondItem="B1m-ZO-QdD" secondAttribute="top" id="EOI-JA-KoF"/>
+                <constraint firstItem="NPX-hh-CwW" firstAttribute="leading" secondItem="B1m-ZO-QdD" secondAttribute="leading" id="FaD-em-eZe"/>
+                <constraint firstAttribute="trailing" secondItem="tqL-oT-52R" secondAttribute="trailing" id="dhi-9b-6KH"/>
+                <constraint firstItem="tqL-oT-52R" firstAttribute="leading" secondItem="B1m-ZO-QdD" secondAttribute="leading" id="gCF-gW-ltH"/>
+                <constraint firstAttribute="bottom" secondItem="NPX-hh-CwW" secondAttribute="bottom" id="nOZ-jb-CW0"/>
+                <constraint firstItem="NPX-hh-CwW" firstAttribute="top" secondItem="B1m-ZO-QdD" secondAttribute="top" id="qyz-3P-KrH"/>
+                <constraint firstAttribute="trailing" secondItem="NPX-hh-CwW" secondAttribute="trailing" id="rVN-to-PPx"/>
+            </constraints>
+            <size key="customSize" width="91" height="150"/>
+            <connections>
+                <outlet property="imageView" destination="tqL-oT-52R" id="89O-4L-eIW"/>
+                <outlet property="title" destination="BLu-Kc-PoF" id="I41-Vo-G9L"/>
+            </connections>
+            <point key="canvasLocation" x="-651" y="-70"/>
+        </collectionViewCell>
+    </objects>
+    <resources>
+        <systemColor name="secondarySystemFillColor">
+            <color red="0.47058823529411764" green="0.47058823529411764" blue="0.50196078431372548" alpha="0.16" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+        <systemColor name="systemBlueColor">
+            <color red="0.0" green="0.47843137254901963" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+    </resources>
+</document>
