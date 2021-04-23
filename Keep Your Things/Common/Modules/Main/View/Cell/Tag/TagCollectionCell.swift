@@ -13,9 +13,8 @@ class TagCollectionCell: UICollectionViewCell {
     
     override func awakeFromNib() {
         super.awakeFromNib()
-        
         layer.cornerRadius = 4
-        backgroundColor = UIColor.gray
+        backgroundColor = UIColor(red: 0.0, green: 1.0, blue: 0.0, alpha: 0.1)
     }
     
     func configure(text: String?,

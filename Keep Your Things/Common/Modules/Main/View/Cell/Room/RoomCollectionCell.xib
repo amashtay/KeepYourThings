@@ -24,38 +24,49 @@
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="RoomPlaceholderImage" translatesAutoresizingMaskIntoConstraints="NO" id="MLv-6c-ace">
                                 <rect key="frame" x="0.0" y="0.0" width="121" height="162"/>
                             </imageView>
-                            <visualEffectView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="cvi-td-Av8">
-                                <rect key="frame" x="0.0" y="126.66666666666667" width="121" height="35.333333333333329"/>
-                                <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="G8w-RB-sNy">
-                                    <rect key="frame" x="0.0" y="0.0" width="121" height="35.333333333333329"/>
-                                    <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                                    <subviews>
-                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" insetsLayoutMarginsFromSafeArea="NO" text="12" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gRU-dM-mnZ">
-                                            <rect key="frame" x="12" y="3.9999999999999876" width="97" height="27.666666666666671"/>
-                                            <fontDescription key="fontDescription" type="system" pointSize="24"/>
-                                            <nil key="textColor"/>
-                                            <nil key="highlightedColor"/>
-                                        </label>
-                                    </subviews>
-                                    <constraints>
-                                        <constraint firstAttribute="trailing" secondItem="gRU-dM-mnZ" secondAttribute="trailing" constant="12" id="0Ds-3Y-cLd"/>
-                                        <constraint firstAttribute="bottom" secondItem="gRU-dM-mnZ" secondAttribute="bottom" constant="4" id="0ej-dU-ubN"/>
-                                        <constraint firstItem="gRU-dM-mnZ" firstAttribute="top" secondItem="G8w-RB-sNy" secondAttribute="top" constant="4" id="yhu-t9-kTd"/>
-                                        <constraint firstItem="gRU-dM-mnZ" firstAttribute="leading" secondItem="G8w-RB-sNy" secondAttribute="leading" constant="12" id="z94-JB-Zx0"/>
-                                    </constraints>
-                                </view>
-                                <blurEffect style="regular"/>
-                            </visualEffectView>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="KcQ-d6-LmR">
+                                <rect key="frame" x="0.0" y="0.0" width="121" height="162"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="color" keyPath="startColor">
+                                        <color key="value" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="color" keyPath="firstColor">
+                                        <color key="value" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="color" keyPath="secondColor">
+                                        <color key="value" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="startLocation">
+                                        <real key="value" value="0.0"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="endLocation">
+                                        <real key="value" value="0.0"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="boolean" keyPath="horizontalMode" value="NO"/>
+                                    <userDefinedRuntimeAttribute type="boolean" keyPath="diagonalMode" value="YES"/>
+                                </userDefinedRuntimeAttributes>
+                            </view>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" insetsLayoutMarginsFromSafeArea="NO" text="12" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gRU-dM-mnZ">
+                                <rect key="frame" x="12" y="121.33333333333333" width="97" height="28.666666666666671"/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="24"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
+                            <constraint firstItem="gRU-dM-mnZ" firstAttribute="leading" secondItem="xVD-rx-oqi" secondAttribute="leading" constant="12" id="0Eq-Kg-FUh"/>
+                            <constraint firstAttribute="bottom" secondItem="KcQ-d6-LmR" secondAttribute="bottom" id="5Kp-qQ-kbI"/>
                             <constraint firstItem="MLv-6c-ace" firstAttribute="leading" secondItem="xVD-rx-oqi" secondAttribute="leading" id="8wd-7L-G3p"/>
                             <constraint firstAttribute="trailing" secondItem="MLv-6c-ace" secondAttribute="trailing" id="CP5-H3-Osr"/>
-                            <constraint firstItem="cvi-td-Av8" firstAttribute="leading" secondItem="xVD-rx-oqi" secondAttribute="leading" id="JrY-Vs-dIm"/>
+                            <constraint firstAttribute="trailing" secondItem="KcQ-d6-LmR" secondAttribute="trailing" id="Du2-IS-j82"/>
+                            <constraint firstItem="KcQ-d6-LmR" firstAttribute="top" secondItem="xVD-rx-oqi" secondAttribute="top" id="FeV-d9-NOK"/>
+                            <constraint firstAttribute="bottom" secondItem="gRU-dM-mnZ" secondAttribute="bottom" constant="12" id="XGh-8U-goi"/>
                             <constraint firstAttribute="bottom" secondItem="MLv-6c-ace" secondAttribute="bottom" id="XRH-ak-oRm"/>
                             <constraint firstItem="MLv-6c-ace" firstAttribute="top" secondItem="xVD-rx-oqi" secondAttribute="top" id="XqN-o2-NHv"/>
-                            <constraint firstAttribute="trailing" secondItem="cvi-td-Av8" secondAttribute="trailing" id="bRQ-Cz-Maj"/>
-                            <constraint firstAttribute="bottom" secondItem="cvi-td-Av8" secondAttribute="bottom" id="dGo-a6-qwG"/>
+                            <constraint firstAttribute="trailing" secondItem="gRU-dM-mnZ" secondAttribute="trailing" constant="12" id="fSq-rV-Udg"/>
+                            <constraint firstItem="KcQ-d6-LmR" firstAttribute="leading" secondItem="xVD-rx-oqi" secondAttribute="leading" id="jvf-MI-c8c"/>
                         </constraints>
                     </view>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="гостиная" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="12" translatesAutoresizingMaskIntoConstraints="NO" id="wGP-Ds-ukk">
@@ -82,6 +93,7 @@
             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
             <size key="customSize" width="266" height="384"/>
             <connections>
+                <outlet property="gradientView" destination="KcQ-d6-LmR" id="k6W-Cb-CFy"/>
                 <outlet property="imageView" destination="MLv-6c-ace" id="v0G-kA-Pq8"/>
                 <outlet property="roomTitleLabel" destination="wGP-Ds-ukk" id="LoE-Jz-Cem"/>
                 <outlet property="thingsCountLabel" destination="gRU-dM-mnZ" id="F7K-hG-jxV"/>
@@ -90,7 +102,7 @@
         </collectionViewCell>
     </objects>
     <resources>
-        <image name="RoomPlaceholderImage" width="121" height="162"/>
+        <image name="RoomPlaceholderImage" width="186" height="220"/>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>
