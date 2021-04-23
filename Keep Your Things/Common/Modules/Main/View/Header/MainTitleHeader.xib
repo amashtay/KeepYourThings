@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="17701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17703"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <collectionReusableView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="U6b-Vx-4bR" customClass="MainTitleHeader" customModule="Keep_Your_Things" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="320" height="50"/>
+            <autoresizingMask key="autoresizingMask"/>
+            <subviews>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Заголовок" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="JOS-Vk-QuX">
+                    <rect key="frame" x="24" y="10.5" width="123.5" height="29"/>
+                    <fontDescription key="fontDescription" type="boldSystem" pointSize="24"/>
+                    <nil key="textColor"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <button opaque="NO" contentMode="scaleToFill" horizontalCompressionResistancePriority="751" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="4BT-Bq-O9y">
+                    <rect key="frame" x="155.5" y="14" width="20" height="22"/>
+                    <state key="normal" image="AddButtonImage"/>
+                    <connections>
+                        <action selector="addButtonTouched:" destination="U6b-Vx-4bR" eventType="touchUpInside" id="pAt-yC-GT7"/>
+                    </connections>
+                </button>
+            </subviews>
+            <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+            <constraints>
+                <constraint firstItem="JOS-Vk-QuX" firstAttribute="centerY" secondItem="U6b-Vx-4bR" secondAttribute="centerY" id="FbH-ci-moX"/>
+                <constraint firstItem="4BT-Bq-O9y" firstAttribute="centerY" secondItem="U6b-Vx-4bR" secondAttribute="centerY" id="KtG-32-hHl"/>
+                <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="4BT-Bq-O9y" secondAttribute="trailing" constant="12" id="TeF-fQ-HdS"/>
+                <constraint firstItem="4BT-Bq-O9y" firstAttribute="leading" secondItem="JOS-Vk-QuX" secondAttribute="trailing" constant="8" id="Wez-Sa-ilB"/>
+                <constraint firstItem="JOS-Vk-QuX" firstAttribute="leading" secondItem="U6b-Vx-4bR" secondAttribute="leading" constant="24" id="qIN-1I-w59"/>
+            </constraints>
+            <connections>
+                <outlet property="titleLabel" destination="JOS-Vk-QuX" id="CmV-wq-4fX"/>
+            </connections>
+            <point key="canvasLocation" x="-258" y="1"/>
+        </collectionReusableView>
+    </objects>
+    <resources>
+        <image name="AddButtonImage" width="20" height="20"/>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+    </resources>
+</document>

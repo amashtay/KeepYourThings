@@ -12,8 +12,9 @@ class MainViewController: UIViewController {
     @IBOutlet weak var collectionView: UICollectionView!
     
     // MARK: Private
-    private let storyCellReuseId = "StoryCell"
+    private let roomCellReuseId = "RoomCollectionCell"
     private let tagCellReuseId = "TagCollectionCell"
+    private let mainTitleHeaderReuseId = "MainTitleHeader"
     private var collectionLayout: UICollectionViewCompositionalLayout?
     
     // MARK: View's lifecycle
@@ -26,8 +27,8 @@ class MainViewController: UIViewController {
     // MARK: Private methods
     
     private func configureCollection() {
-        collectionView.register(UINib(nibName: "StoryCell", bundle: nil),
-                                forCellWithReuseIdentifier: storyCellReuseId)
+        collectionView.register(UINib(nibName: "RoomCollectionCell", bundle: nil),
+                                forCellWithReuseIdentifier: roomCellReuseId)
         collectionView.register(UINib(nibName: "TagCollectionCell", bundle: nil),
                                 forCellWithReuseIdentifier: tagCellReuseId)
         
@@ -35,6 +36,9 @@ class MainViewController: UIViewController {
     }
     
     private func configureLayout() {
+        collectionView.register(UINib(nibName: "MainTitleHeader", bundle: nil),
+                                forSupplementaryViewOfKind: UICollectionView.elementKindSectionHeader,
+                                withReuseIdentifier: mainTitleHeaderReuseId)
         collectionView.collectionViewLayout = createLayout()
     }
     
@@ -42,7 +46,7 @@ class MainViewController: UIViewController {
     private func createLayout() -> UICollectionViewLayout {
         return UICollectionViewCompositionalLayout { [weak self] (sectionIndex, layoutEnvironment) -> NSCollectionLayoutSection? in
             switch sectionIndex {
-            case 0: return self?.createStoriesLayout()
+            case 0: return self?.createRoomsLayout()
             case 1: return self?.defaultLayout()
             case 2: return self?.createTagsLayout()
             default: return self?.defaultLayout()
@@ -51,30 +55,39 @@ class MainViewController: UIViewController {
     }
     
     
-    private func createStoriesLayout() -> NSCollectionLayoutSection {
+    private func createRoomsLayout() -> NSCollectionLayoutSection {
         
-        let item = NSCollectionLayoutItem(layoutSize: NSCollectionLayoutSize(widthDimension: .fractionalWidth(1.0), heightDimension: .fractionalHeight(1.0)))
-        item.contentInsets = NSDirectionalEdgeInsets(top: 12.0, leading: 12.0, bottom: 12.0, trailing: 12.0)
+        let item = NSCollectionLayoutItem(layoutSize: NSCollectionLayoutSize(widthDimension: .absolute(121.0), heightDimension: .fractionalHeight(1.0)))
+        item.contentInsets = NSDirectionalEdgeInsets(top: 0.0, leading: 1.0, bottom: 0.0, trailing: 1.0)
         
+        let visibleCount = 3
         let group = NSCollectionLayoutGroup.horizontal(
-            layoutSize: NSCollectionLayoutSize(widthDimension: .fractionalWidth(1.0),
-                                               heightDimension: .absolute(86.0)),
+            layoutSize: NSCollectionLayoutSize(widthDimension: .fractionalWidth(0.9),
+                                               heightDimension: .absolute(190.0)),
             subitem: item,
-            count: 1)
+            count: visibleCount)
         
         let section = NSCollectionLayoutSection(group: group)
         section.orthogonalScrollingBehavior = .continuous
+        section.contentInsets = NSDirectionalEdgeInsets(top: 10.0, leading: 0.0, bottom: 10.0, trailing: 0.0)
+        
+        
+        section.boundarySupplementaryItems = createSectionSupplementaryItems()
         return section
     }
     
     private func defaultLayout() -> NSCollectionLayoutSection {
         
         let item = NSCollectionLayoutItem(layoutSize: NSCollectionLayoutSize(widthDimension: .fractionalWidth(1.0), heightDimension: .fractionalHeight(1.0)))
-        item.contentInsets = NSDirectionalEdgeInsets(top: 12.0, leading: 12.0, bottom: 12.0, trailing: 12.0)
-        let groupSize = NSCollectionLayoutSize(widthDimension: .fractionalWidth(1.0),  heightDimension: .estimated(70))
-        let group = NSCollectionLayoutGroup.horizontal(layoutSize: groupSize, subitem: item, count: 1)
+        item.contentInsets = NSDirectionalEdgeInsets(top: 4.0, leading: 4.0, bottom: 4.0, trailing: 4.0)
+        let groupSize = NSCollectionLayoutSize(widthDimension: .fractionalWidth(0.9),  heightDimension: .fractionalHeight(0.3))//.estimated(70))
+        //let group = NSCollectionLayoutGroup.horizontal(layoutSize: groupSize, subitem: item, count: 1)
+        let group = NSCollectionLayoutGroup.vertical(layoutSize: groupSize, subitem: item, count: 5)
         let section = NSCollectionLayoutSection(group: group)
-        section.contentInsets = NSDirectionalEdgeInsets(top: 10, leading: 12, bottom: 0, trailing: 12)
+        
+        section.orthogonalScrollingBehavior = .groupPaging
+        section.contentInsets = NSDirectionalEdgeInsets(top: 10, leading: 0.0, bottom: 10, trailing: 12)
+        section.boundarySupplementaryItems = createSectionSupplementaryItems()
         return section
     }
     
@@ -88,15 +101,22 @@ class MainViewController: UIViewController {
         let item = NSCollectionLayoutItem(layoutSize: itemSize)
         
         item.edgeSpacing = NSCollectionLayoutEdgeSpacing(leading: .fixed(2), top: .fixed(4), trailing: .fixed(2), bottom: .fixed(4))
-        
         let groupSize = NSCollectionLayoutSize(widthDimension: .fractionalWidth(1),
                                                heightDimension: .estimated(estimatedHeight))
         let group = NSCollectionLayoutGroup.horizontal(layoutSize: groupSize,
                                                        subitems: [item])
-        
         let section = NSCollectionLayoutSection(group: group)
-        
         return section
+    }
+    
+    private func createSectionSupplementaryItems() -> [NSCollectionLayoutBoundarySupplementaryItem] {
+        let headerSize = NSCollectionLayoutSize(widthDimension: .fractionalWidth(1.0),
+                                                heightDimension: .absolute(44.0))
+        let sectionHeader = NSCollectionLayoutBoundarySupplementaryItem(layoutSize: headerSize,
+                                                                        elementKind: UICollectionView.elementKindSectionHeader,
+                                                                        alignment: .top)
+        
+        return [sectionHeader]
     }
     
 }
@@ -117,7 +137,7 @@ extension MainViewController: UICollectionViewDataSource {
         case 0:
             return 16
         case 1:
-            return 4
+            return 32
         case 2:
             return 8
         default:
@@ -126,7 +146,12 @@ extension MainViewController: UICollectionViewDataSource {
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        if (indexPath.section == 2) {
+        switch indexPath.section {
+        case 0:
+            if let cell = collectionView.dequeueReusableCell(withReuseIdentifier: roomCellReuseId, for: indexPath) as? RoomCollectionCell {
+                return cell
+            }
+        default:
             if let cell = collectionView.dequeueReusableCell(withReuseIdentifier: tagCellReuseId, for: indexPath) as? TagCollectionCell {
                 
                 var testStr = "First"
@@ -137,11 +162,19 @@ extension MainViewController: UICollectionViewDataSource {
                 return cell
             }
         }
-        if let cell = collectionView.dequeueReusableCell(withReuseIdentifier: storyCellReuseId, for: indexPath) as? StoryCell {
-            return cell
-        }
         return UICollectionViewCell()
     }
     
-    
+    func collectionView(_ collectionView: UICollectionView, viewForSupplementaryElementOfKind kind: String, at indexPath: IndexPath) -> UICollectionReusableView {
+        
+        if let view = collectionView.dequeueReusableSupplementaryView(ofKind: UICollectionView.elementKindSectionHeader,
+                                                                      withReuseIdentifier: mainTitleHeaderReuseId,
+                                                                      for: indexPath) as? MainTitleHeader {
+            view.configure(title: "Пример[\(indexPath.section)]") {
+                print("Header touched")
+            }
+            return view
+        }
+        return UICollectionReusableView()
+    }
 }

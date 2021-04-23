@@ -19,6 +19,12 @@
 		110FAC17260E07A100BFD6C1 /* StoryCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 110FAC15260E07A100BFD6C1 /* StoryCell.xib */; };
 		110FAC1C260E08AE00BFD6C1 /* StoryCellObject.swift in Sources */ = {isa = PBXBuildFile; fileRef = 110FAC1B260E08AE00BFD6C1 /* StoryCellObject.swift */; };
 		110FAC21260E091E00BFD6C1 /* UICollectionViewCell+Animations.swift in Sources */ = {isa = PBXBuildFile; fileRef = 110FAC20260E091E00BFD6C1 /* UICollectionViewCell+Animations.swift */; };
+		113F992F2632D67E00C7BA86 /* RoomCollectionCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 113F992D2632D67E00C7BA86 /* RoomCollectionCell.swift */; };
+		113F99302632D67E00C7BA86 /* RoomCollectionCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 113F992E2632D67E00C7BA86 /* RoomCollectionCell.xib */; };
+		113F99332632E2A300C7BA86 /* RoomCellObject.swift in Sources */ = {isa = PBXBuildFile; fileRef = 113F99322632E2A300C7BA86 /* RoomCellObject.swift */; };
+		11AD835A2631E8AC00E070D4 /* XibView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11AD83592631E8AC00E070D4 /* XibView.swift */; };
+		11AD836A2631EDE000E070D4 /* MainTitleHeader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11AD83682631EDE000E070D4 /* MainTitleHeader.swift */; };
+		11AD836B2631EDE000E070D4 /* MainTitleHeader.xib in Resources */ = {isa = PBXBuildFile; fileRef = 11AD83692631EDE000E070D4 /* MainTitleHeader.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -36,6 +42,12 @@
 		110FAC15260E07A100BFD6C1 /* StoryCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = StoryCell.xib; sourceTree = "<group>"; };
 		110FAC1B260E08AE00BFD6C1 /* StoryCellObject.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StoryCellObject.swift; sourceTree = "<group>"; };
 		110FAC20260E091E00BFD6C1 /* UICollectionViewCell+Animations.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UICollectionViewCell+Animations.swift"; sourceTree = "<group>"; };
+		113F992D2632D67E00C7BA86 /* RoomCollectionCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoomCollectionCell.swift; sourceTree = "<group>"; };
+		113F992E2632D67E00C7BA86 /* RoomCollectionCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = RoomCollectionCell.xib; sourceTree = "<group>"; };
+		113F99322632E2A300C7BA86 /* RoomCellObject.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoomCellObject.swift; sourceTree = "<group>"; };
+		11AD83592631E8AC00E070D4 /* XibView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = XibView.swift; sourceTree = "<group>"; };
+		11AD83682631EDE000E070D4 /* MainTitleHeader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainTitleHeader.swift; sourceTree = "<group>"; };
+		11AD83692631EDE000E070D4 /* MainTitleHeader.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MainTitleHeader.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -98,6 +110,7 @@
 		110FAC0B260E05D300BFD6C1 /* Common */ = {
 			isa = PBXGroup;
 			children = (
+				11AD83542631E81300E070D4 /* Additional */,
 				110FAC1E260E08DA00BFD6C1 /* Extensions */,
 				110FAC0C260E05DE00BFD6C1 /* Modules */,
 			);
@@ -123,6 +136,7 @@
 		110FAC10260E06BF00BFD6C1 /* View */ = {
 			isa = PBXGroup;
 			children = (
+				11AD835D2631E8C500E070D4 /* Header */,
 				110FAC12260E06F400BFD6C1 /* Cell */,
 				110FABF8260E055200BFD6C1 /* MainViewController.swift */,
 				110FABFA260E055200BFD6C1 /* Main.storyboard */,
@@ -133,6 +147,7 @@
 		110FAC12260E06F400BFD6C1 /* Cell */ = {
 			isa = PBXGroup;
 			children = (
+				113F992C2632D62A00C7BA86 /* Room */,
 				1103B30E260F1ACA00781CF5 /* Tag */,
 				110FAC13260E073E00BFD6C1 /* Stories */,
 			);
@@ -163,6 +178,49 @@
 				110FAC20260E091E00BFD6C1 /* UICollectionViewCell+Animations.swift */,
 			);
 			path = UICollectionViewCell;
+			sourceTree = "<group>";
+		};
+		113F992C2632D62A00C7BA86 /* Room */ = {
+			isa = PBXGroup;
+			children = (
+				113F992D2632D67E00C7BA86 /* RoomCollectionCell.swift */,
+				113F992E2632D67E00C7BA86 /* RoomCollectionCell.xib */,
+				113F99322632E2A300C7BA86 /* RoomCellObject.swift */,
+			);
+			path = Room;
+			sourceTree = "<group>";
+		};
+		11AD83542631E81300E070D4 /* Additional */ = {
+			isa = PBXGroup;
+			children = (
+				11AD83552631E81900E070D4 /* UI */,
+			);
+			path = Additional;
+			sourceTree = "<group>";
+		};
+		11AD83552631E81900E070D4 /* UI */ = {
+			isa = PBXGroup;
+			children = (
+				11AD83562631E81E00E070D4 /* XibView */,
+			);
+			path = UI;
+			sourceTree = "<group>";
+		};
+		11AD83562631E81E00E070D4 /* XibView */ = {
+			isa = PBXGroup;
+			children = (
+				11AD83592631E8AC00E070D4 /* XibView.swift */,
+			);
+			path = XibView;
+			sourceTree = "<group>";
+		};
+		11AD835D2631E8C500E070D4 /* Header */ = {
+			isa = PBXGroup;
+			children = (
+				11AD83682631EDE000E070D4 /* MainTitleHeader.swift */,
+				11AD83692631EDE000E070D4 /* MainTitleHeader.xib */,
+			);
+			path = Header;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -222,6 +280,8 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				113F99302632D67E00C7BA86 /* RoomCollectionCell.xib in Resources */,
+				11AD836B2631EDE000E070D4 /* MainTitleHeader.xib in Resources */,
 				110FAC01260E055300BFD6C1 /* LaunchScreen.storyboard in Resources */,
 				110FAC17260E07A100BFD6C1 /* StoryCell.xib in Resources */,
 				110FABFE260E055300BFD6C1 /* Assets.xcassets in Resources */,
@@ -239,10 +299,14 @@
 			files = (
 				110FABF9260E055200BFD6C1 /* MainViewController.swift in Sources */,
 				110FAC16260E07A100BFD6C1 /* StoryCell.swift in Sources */,
+				113F992F2632D67E00C7BA86 /* RoomCollectionCell.swift in Sources */,
 				110FABF5260E055200BFD6C1 /* AppDelegate.swift in Sources */,
 				1103B311260F1AEB00781CF5 /* TagCollectionCell.swift in Sources */,
 				110FAC21260E091E00BFD6C1 /* UICollectionViewCell+Animations.swift in Sources */,
 				110FAC1C260E08AE00BFD6C1 /* StoryCellObject.swift in Sources */,
+				11AD836A2631EDE000E070D4 /* MainTitleHeader.swift in Sources */,
+				113F99332632E2A300C7BA86 /* RoomCellObject.swift in Sources */,
+				11AD835A2631E8AC00E070D4 /* XibView.swift in Sources */,
 				110FABF7260E055200BFD6C1 /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
