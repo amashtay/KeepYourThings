@@ -21,7 +21,7 @@ class TagCollectionCell: UICollectionViewCell {
                    color: UIColor? = nil) {
         label.text = text
         if let color = color {
-            label.tintColor = color
+            backgroundColor = color.withAlphaComponent(0.1)
         }
     }
 

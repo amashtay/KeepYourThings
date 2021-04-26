@@ -14,13 +14,17 @@ class MainViewController: UIViewController {
     @IBOutlet weak var collectionView: UICollectionView!
     
     // MARK: Private
-    private let roomCellReuseId = "RoomCollectionCell"
+    private let chestCellReuseId = "ChestCollectionCell"
     private let tagCellReuseId = "TagCollectionCell"
     private let seasonCellReuseId = "SeasonCollectionCell"
     private let mainTitleHeaderReuseId = "MainTitleHeader"
     private let mainFooterViewReuseId = "MainFooterView"
     private let layoutProvider = MainLayoutProvider()
     private var collectionLayout: UICollectionViewCompositionalLayout?
+    
+    private var chests = [ChestCellObject]()
+    private var seasons = [SeasonCellObject]()
+    private var tags = [TagCellObject]()
     
     // MARK: View's lifecycle
     
@@ -33,8 +37,8 @@ class MainViewController: UIViewController {
     // MARK: Private methods
     
     private func configureCollection() {
-        collectionView.register(UINib(nibName: "RoomCollectionCell", bundle: nil),
-                                forCellWithReuseIdentifier: roomCellReuseId)
+        collectionView.register(UINib(nibName: "ChestCollectionCell", bundle: nil),
+                                forCellWithReuseIdentifier: chestCellReuseId)
         collectionView.register(UINib(nibName: "TagCollectionCell", bundle: nil),
                                 forCellWithReuseIdentifier: tagCellReuseId)
         collectionView.register(UINib(nibName: "SeasonCollectionCell", bundle: nil),
@@ -57,7 +61,24 @@ class MainViewController: UIViewController {
 }
 
 extension MainViewController: MainViewInput {
+
+    func updateChests(chests: [ChestCellObject]) {
+        self.chests = chests
+        //collectionView.reloadSections(IndexSet(integer: 0))
+        collectionView.reloadData()
+    }
     
+    func updateSeasons(seasons: [SeasonCellObject]) {
+        self.seasons = seasons
+        //collectionView.reloadSections(IndexSet(integer: 1))
+        collectionView.reloadData()
+    }
+    
+    func updateTags(tags: [TagCellObject]) {
+        self.tags = tags
+        //collectionView.reloadSections([2])
+        collectionView.reloadData()
+    }
 }
 
 extension MainViewController: UICollectionViewDelegate {
@@ -73,11 +94,11 @@ extension MainViewController: UICollectionViewDataSource {
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         switch section {
         case 0:
-            return 5
+            return chests.count
         case 1:
-            return 4
+            return seasons.count
         case 2:
-            return 8
+            return tags.count
         default:
             return 0
         }
@@ -86,26 +107,24 @@ extension MainViewController: UICollectionViewDataSource {
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         switch indexPath.section {
         case 0:
-            if let cell = collectionView.dequeueReusableCell(withReuseIdentifier: roomCellReuseId, for: indexPath) as? RoomCollectionCell {
+            if let cell = collectionView.dequeueReusableCell(withReuseIdentifier: chestCellReuseId, for: indexPath) as? ChestCollectionCell {
+                cell.configure(thingsCount: chests[indexPath.row].thingsCount,
+                               roomTitle: chests[indexPath.row].roomTitle)
                 return cell
             }
         case 1:
-            if let cell = collectionView.dequeueReusableCell(withReuseIdentifier: seasonCellReuseId, for: indexPath) as? SeasonCollectionCell,
-               let season = Season(rawValue: indexPath.row) {
-                
-                cell.configure(season: season)
+            if let cell = collectionView.dequeueReusableCell(withReuseIdentifier: seasonCellReuseId, for: indexPath) as? SeasonCollectionCell {
+                cell.configure(season: seasons[indexPath.row].season)
+                return cell
+            }
+        case 2:
+            if let cell = collectionView.dequeueReusableCell(withReuseIdentifier: tagCellReuseId, for: indexPath) as? TagCollectionCell {
+                cell.configure(text: tags[indexPath.row].name,
+                               color: UIColor.hexString(hex: tags[indexPath.row].backgroundColor))
                 return cell
             }
         default:
-            if let cell = collectionView.dequeueReusableCell(withReuseIdentifier: tagCellReuseId, for: indexPath) as? TagCollectionCell {
-                
-                var testStr = "First"
-                for i in 0..<indexPath.row {
-                    testStr.append(" \(i)")
-                }
-                cell.configure(text: testStr, color: UIColor.red)
-                return cell
-            }
+            break
         }
         return UICollectionViewCell()
     }

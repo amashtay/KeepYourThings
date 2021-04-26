@@ -1,5 +1,5 @@
 //
-//  RoomCollectionCell.swift
+//  ChestCollectionCell.swift
 //  Keep Your Things
 //
 //  Created by Александр on 23.04.2021.
@@ -7,7 +7,7 @@
 
 import UIKit
 
-class RoomCollectionCell: UICollectionViewCell {
+class ChestCollectionCell: UICollectionViewCell {
 
     @IBOutlet weak var imageView: UIImageView!
     @IBOutlet weak var thingsCountLabel: UILabel!

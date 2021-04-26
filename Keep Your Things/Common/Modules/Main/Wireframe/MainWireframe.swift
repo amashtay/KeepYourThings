@@ -13,6 +13,7 @@ final class MainWireframe {
         let viewController = storyboard.instantiateViewController(withIdentifier: "MainViewController") as! MainViewController
         
         let presenter = MainPresenter()
+        presenter.storageService = MainStubService()
         presenter.controller = viewController
         viewController.presenter = presenter
         

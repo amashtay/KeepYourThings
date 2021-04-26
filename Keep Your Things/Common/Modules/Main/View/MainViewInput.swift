@@ -9,4 +9,9 @@ import Foundation
 
 protocol MainViewInput: AnyObject {
 
+    func updateChests(chests: [ChestCellObject])
+    
+    func updateSeasons(seasons: [SeasonCellObject])
+    
+    func updateTags(tags: [TagCellObject])
 }

@@ -7,13 +7,6 @@
 
 import Foundation
 
-enum Season: Int {
-    case winter = 0
-    case spring
-    case summer
-    case fall
-}
-
 struct SeasonCellObject {
     let season: Season
     var action: (() -> ())?
