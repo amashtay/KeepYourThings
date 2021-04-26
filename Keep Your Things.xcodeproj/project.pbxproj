@@ -36,11 +36,22 @@
 		11784BD4263722E500BE8391 /* TagCollectionCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11784BD2263722E500BE8391 /* TagCollectionCell.swift */; };
 		11784BDB263725A400BE8391 /* UIColor+HexString.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11784BDA263725A400BE8391 /* UIColor+HexString.swift */; };
 		11784BDF2637281C00BE8391 /* TagEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11784BDE2637281C00BE8391 /* TagEntity.swift */; };
+		11784BF826373A5200BE8391 /* StorageServiceTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11784BF726373A5200BE8391 /* StorageServiceTests.swift */; };
 		11AD835A2631E8AC00E070D4 /* XibView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11AD83592631E8AC00E070D4 /* XibView.swift */; };
 		11AD836A2631EDE000E070D4 /* MainTitleHeader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11AD83682631EDE000E070D4 /* MainTitleHeader.swift */; };
 		11AD836B2631EDE000E070D4 /* MainTitleHeader.xib in Resources */ = {isa = PBXBuildFile; fileRef = 11AD83692631EDE000E070D4 /* MainTitleHeader.xib */; };
 		11F13721263353C700B57B31 /* MainWireframe.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11F13720263353C700B57B31 /* MainWireframe.swift */; };
 /* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		11784BED2637393E00BE8391 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 110FABE9260E055200BFD6C1 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 110FABF0260E055200BFD6C1;
+			remoteInfo = "Keep Your Things";
+		};
+/* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
 		110FABF1260E055200BFD6C1 /* Keep Your Things.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Keep Your Things.app"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -74,6 +85,9 @@
 		11784BD2263722E500BE8391 /* TagCollectionCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TagCollectionCell.swift; sourceTree = "<group>"; };
 		11784BDA263725A400BE8391 /* UIColor+HexString.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor+HexString.swift"; sourceTree = "<group>"; };
 		11784BDE2637281C00BE8391 /* TagEntity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TagEntity.swift; sourceTree = "<group>"; };
+		11784BE82637393E00BE8391 /* Keep Your ThingsTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Keep Your ThingsTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		11784BEC2637393E00BE8391 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		11784BF726373A5200BE8391 /* StorageServiceTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StorageServiceTests.swift; sourceTree = "<group>"; };
 		11AD83592631E8AC00E070D4 /* XibView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = XibView.swift; sourceTree = "<group>"; };
 		11AD83682631EDE000E070D4 /* MainTitleHeader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainTitleHeader.swift; sourceTree = "<group>"; };
 		11AD83692631EDE000E070D4 /* MainTitleHeader.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MainTitleHeader.xib; sourceTree = "<group>"; };
@@ -82,6 +96,13 @@
 
 /* Begin PBXFrameworksBuildPhase section */
 		110FABEE260E055200BFD6C1 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		11784BE52637393E00BE8391 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -105,6 +126,7 @@
 			isa = PBXGroup;
 			children = (
 				110FABF3260E055200BFD6C1 /* Keep Your Things */,
+				11784BE92637393E00BE8391 /* Keep Your ThingsTests */,
 				110FABF2260E055200BFD6C1 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -113,6 +135,7 @@
 			isa = PBXGroup;
 			children = (
 				110FABF1260E055200BFD6C1 /* Keep Your Things.app */,
+				11784BE82637393E00BE8391 /* Keep Your ThingsTests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -307,6 +330,31 @@
 			path = UIColor;
 			sourceTree = "<group>";
 		};
+		11784BE92637393E00BE8391 /* Keep Your ThingsTests */ = {
+			isa = PBXGroup;
+			children = (
+				11784BF42637396300BE8391 /* Services */,
+				11784BEC2637393E00BE8391 /* Info.plist */,
+			);
+			path = "Keep Your ThingsTests";
+			sourceTree = "<group>";
+		};
+		11784BF42637396300BE8391 /* Services */ = {
+			isa = PBXGroup;
+			children = (
+				11784BF52637398200BE8391 /* Storage */,
+			);
+			path = Services;
+			sourceTree = "<group>";
+		};
+		11784BF52637398200BE8391 /* Storage */ = {
+			isa = PBXGroup;
+			children = (
+				11784BF726373A5200BE8391 /* StorageServiceTests.swift */,
+			);
+			path = Storage;
+			sourceTree = "<group>";
+		};
 		11AD83542631E81300E070D4 /* Additional */ = {
 			isa = PBXGroup;
 			children = (
@@ -368,6 +416,24 @@
 			productReference = 110FABF1260E055200BFD6C1 /* Keep Your Things.app */;
 			productType = "com.apple.product-type.application";
 		};
+		11784BE72637393E00BE8391 /* Keep Your ThingsTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 11784BEF2637393E00BE8391 /* Build configuration list for PBXNativeTarget "Keep Your ThingsTests" */;
+			buildPhases = (
+				11784BE42637393E00BE8391 /* Sources */,
+				11784BE52637393E00BE8391 /* Frameworks */,
+				11784BE62637393E00BE8391 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				11784BEE2637393E00BE8391 /* PBXTargetDependency */,
+			);
+			name = "Keep Your ThingsTests";
+			productName = "Keep Your ThingsTests";
+			productReference = 11784BE82637393E00BE8391 /* Keep Your ThingsTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
@@ -379,6 +445,10 @@
 				TargetAttributes = {
 					110FABF0260E055200BFD6C1 = {
 						CreatedOnToolsVersion = 12.4;
+					};
+					11784BE72637393E00BE8391 = {
+						CreatedOnToolsVersion = 12.4;
+						TestTargetID = 110FABF0260E055200BFD6C1;
 					};
 				};
 			};
@@ -396,6 +466,7 @@
 			projectRoot = "";
 			targets = (
 				110FABF0260E055200BFD6C1 /* Keep Your Things */,
+				11784BE72637393E00BE8391 /* Keep Your ThingsTests */,
 			);
 		};
 /* End PBXProject section */
@@ -413,6 +484,13 @@
 				110FABFE260E055300BFD6C1 /* Assets.xcassets in Resources */,
 				11784BD3263722E500BE8391 /* TagCollectionCell.xib in Resources */,
 				110FABFC260E055200BFD6C1 /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		11784BE62637393E00BE8391 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -451,7 +529,23 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		11784BE42637393E00BE8391 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				11784BF826373A5200BE8391 /* StorageServiceTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		11784BEE2637393E00BE8391 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 110FABF0260E055200BFD6C1 /* Keep Your Things */;
+			targetProxy = 11784BED2637393E00BE8391 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
 		110FABFA260E055200BFD6C1 /* Main.storyboard */ = {
@@ -629,6 +723,46 @@
 			};
 			name = Release;
 		};
+		11784BF02637393E00BE8391 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = SZ46K2Z6E6;
+				INFOPLIST_FILE = "Keep Your ThingsTests/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "com.amashtay.keepYourThings.Keep-Your-Things.Keep-Your-ThingsTests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Keep Your Things.app/Keep Your Things";
+			};
+			name = Debug;
+		};
+		11784BF12637393E00BE8391 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = SZ46K2Z6E6;
+				INFOPLIST_FILE = "Keep Your ThingsTests/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "com.amashtay.keepYourThings.Keep-Your-Things.Keep-Your-ThingsTests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Keep Your Things.app/Keep Your Things";
+			};
+			name = Release;
+		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -646,6 +780,15 @@
 			buildConfigurations = (
 				110FAC06260E055300BFD6C1 /* Debug */,
 				110FAC07260E055300BFD6C1 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		11784BEF2637393E00BE8391 /* Build configuration list for PBXNativeTarget "Keep Your ThingsTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				11784BF02637393E00BE8391 /* Debug */,
+				11784BF12637393E00BE8391 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
